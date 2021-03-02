@@ -1,0 +1,35 @@
+PROGRAM EJEMPLO_5_1
+  IMPLICIT NONE
+
+  REAL :: Nota
+  CHARACTER (3), DIMENSION(1:5) :: NT, LISTNT=(/'S','A','N','Sob','MH'/)
+  INTEGER :: IN
+  ! READ NOTE
+  PRINT *,"Notal del estudiante?"
+  READ 50, Nota
+50 FORMAT(F4.1)
+  IF (Nota>0.0.AND.Nota<5.0) THEN
+     IN=1
+  ELSE IF (Nota>=5.0.AND.Nota<7.0) THEN
+     IN=2
+  ELSE IF (Nota>=7.0.AND.Nota<9.0) THEN
+     IN=3
+  ELSE IF (Nota>=9.0.AND.Nota<10.0) THEN
+     IN=4
+  ELSE IF (Nota==10.0) THEN
+     IN=5
+  ELSE
+     IN=0
+  ENDIF
+
+  IF (IN==0) THEN
+     PRINT *,"LA NOTA : ", Nota, " NO ES UNA NOTA ACEPTABLE."
+  ELSE
+     PRINT 100, Nota, LISTNT(IN)
+  ENDIF
+
+  100 FORMAT(1X,'LA NOTA DEL ALUMNO ES ',F4.1,' (',A3,')')
+END PROGRAM EJEMPLO_5_1
+
+
+

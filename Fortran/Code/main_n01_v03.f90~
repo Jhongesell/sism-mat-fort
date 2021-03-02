@@ -1,0 +1,11 @@
+PROGRAM ej_3_2
+  IMPLICIT NONE
+  !Sismología
+  REAL :: Fy = 25.0, k=8.5, p=0.017
+  REAL :: B=0.90, L=0.10, uy=0
+  INTEGER:: a=0
+  REAL, DIMENSION(:), ALLOCATABLE :: vector
+  INTEGER:: elemento, cant_element
+END PROGRAM ej_3_2
+
+  
