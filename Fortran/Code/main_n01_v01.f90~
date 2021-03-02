@@ -1,0 +1,17 @@
+PROGRAM mi_programa
+  IMPLICIT NONE
+  REAL :: Fy=25 ! Fuerza de influencia
+  REAL :: k=8.5 ! rigidez inicial
+  REAL :: p = 0.017 ! valor no identificado
+  REAL :: B=0.90 !
+  REAL :: L=0.10 ! siempre se cumple B+L=1
+  INTEGER :: N=1 !
+  !uy=Fy/k
+  INTEGER :: a = 0
+  !DATOS DE INGRESO
+  !===============
+  PRINT *,'-------DATOS PARA EL ANALISIS----------'
+  PRINT *,'Vector desplazamiento ='
+  READ (*,*) NC
+  PRINT *,'---------------------------------------'
+END PROGRAM mi_programa

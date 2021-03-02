@@ -1,0 +1,12 @@
+  PROGRAM ej_1_1
+  ! Este programa lee e imprime un nombre (cadena de caracteres)
+  IMPLICIT NONE
+  CHARACTER(LEN=50) :: Nombre
+
+  PRINT *,'Escribe tu nombre entre commillas:'
+  PRINT *,' (max 50 caracteres)'
+  READ (*,*) Nombre
+  PRINT *,Nombre
+  END PROGRAM
+
+  

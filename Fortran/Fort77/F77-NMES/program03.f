@@ -1,0 +1,12 @@
+       PROGRAM PROJEC
+       REAL HGHTO, HGHT, VELOCO, VELOC, ACCEL, TIME
+
+       ACCEL = -9.807
+       HGHTO = 100.0
+       VELOCO = 90.0
+       TIME = 4.3
+       HGHT = 0.5 * ACCEL * TIME ** 2 + VELOCO * TIME + HGHTO
+       VELOC = ACCEL * TIME + VELOCO
+       PRINT *, 'AT TIME ', TIME, 'THE VERTICAL VELOCITY IS ', VELOC
+       PRINT *, 'AND THE HEIGHT IS ', HGHT
+       END
