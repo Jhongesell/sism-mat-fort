@@ -7,6 +7,7 @@ PROGRAM asistencia
   CHARACTER(LEN = 2), DIMENSION(1:N_prac,1:N_asig,1:N_alum) :: asiste='NO'
   DO alumno = 1,N_alum
      DO asignatura = 1,N_asig
+        PRINT *,'Ingrese nota de practicas: '
         READ(*,*) (asiste(pract,asignatura,alumno),pract = 1, N_prac)
      ENDDO
   ENDDO

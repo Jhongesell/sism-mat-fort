@@ -1,0 +1,31 @@
+PROGRAM ej_4_1
+  ! DEFINICIÓN DE VARIABLES
+  IMPLICIT NONE
+  REAL :: Total=0.0, Promedio=0.0
+  REAL, DIMENSION(:), ALLOCATABLE :: t_trab
+  ! Factor que corrige el tiempo trabajado los dos últimos días
+  REAL :: Fac_correc=1.05
+  INTEGER :: Dia, num_dias
+  !
+  PRINT *,' Introduzca el no. de los dias para los que se va '
+  PRINT *,' a calcular el promedio de horas y minbutos trabajados.'
+  READ (*,*) num_dias
+  ! Dimensiona dinámicamente la matriz
+  ALLOCATE(t_trab(1:num_dias))
+  !
+  PRINT *,' Introduzca las horas trabajadas'
+  PRINT *,' por dia en ', num_dias, ' dias.'
+  ! Lectura de datos
+  READ (*,*), t_trab
+  !
+  t_trab(num_dias-1:num_dias) = Fac_correc*t_trab(num_dias-1:num_dias)
+  !
+  !
+  Total = SUM(t_trab)
+  !
+  Promedio = Total / num_dias
+  !
+  PRINT *,' Horas de trabajo en ',num_dias,' dias : '
+  PRINT *, Promedio
+  !
+END PROGRAM ej_4_1
