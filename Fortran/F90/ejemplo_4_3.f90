@@ -10,13 +10,15 @@ PROGRAM ej_4_3
   REAL, DIMENSION(25) :: VC = &
        (/ 0.0,0.0,0.0,0.0,1.0,0.5,2.0,3.2,0.0,0.0, &
        0.0, 0.0,0.0,0.0,11.0,0.5,2.3,3.2,0.0,0.0, &
-       1.0,3.0,2.0,-2.0,-0.6 /)
+       1.0,3.0,-2.0,-2.0,-0.6 /)
   ! Producto escalar VA.VB
   PE = DOT_PRODUCT(VA,VB)
   !
+  PRINT*,' PRODUCTO ESCALAR (VA,VB) = ', PE
+  !
   ! Producto de matrices VAxMC
   ! Haciendo RESHAPE de VC hacemos que sea una matriz 5x5
-  MC = RESHAPE(VC, (/5, 5/))
+  MC = RESHAPE(VC, (/5, 5 /))
   PMAT = MATMUL(VA,MC)
   !
   PRINT *, 'PRODUCTO VAxMC = ', PMAT(1:5)

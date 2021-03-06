@@ -1,0 +1,6 @@
+PROGRAM test01
+  IMPLICIT NONE
+  INTEGER, DIMENSION(1:4,1:2) :: A = &
+       RESHAPE( (/1, 2, 3, 4, 1, 2, 3, 4/), (/4M 2 /) )
+  PRINT *,A
+END PROGRAM test01
