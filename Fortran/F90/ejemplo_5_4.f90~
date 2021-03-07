@@ -1,0 +1,10 @@
+PROGRAM ejemplo_5_4
+  !
+  IMPLICIT NONE
+  !
+  REAL :: X_val = 0.0
+  REAL :: X_app = 0.0, X_sum = 0.0
+  INTEGER :: I_flag = 1, I_count = 0
+  !
+  ! APROXIMACIONES SUCESIVAS A SIN(X) = X - X**3/3! + X**5/5! - X**7/7! + ...
+  WRITE(*,*) "

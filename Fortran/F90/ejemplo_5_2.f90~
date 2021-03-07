@@ -1,0 +1,32 @@
+PROGRAM EJEMPLO_5_2
+  IMPLICIT NONE
+  REAL :: Nota
+  INTEGER :: IN, Inota
+  CHARACTER (3), DIMENSION(1:5) :: LISTNT=(/'S','A','N','Sob','MH'/)
+  ! READ NOTE
+  PRINT *, "Nota del estudiante"
+  READ (*,*) Nota
+  Inota = NINT(Nota)
+  SELECT CASE (Inota)
+  CASE (0:4)
+     IN = 1
+  CASE (5,6)
+     IN = 2
+  CASE (7,8)
+     IN = 3
+  CASE (9)
+     IN = 4
+  CASE (10)
+     IN = 5
+  CASE DEFAULT
+     IN = 0
+  END SELECT
+  !
+  IF (IN==0) THEN
+     PRINT *,"LA NOTA : ", Nota, " NO ES UNA NOTA ACEPTABLE."
+  ELSE
+     PRINT 100, Nota, LISTNT(IN)
+  ENDIF
+  !
+100 FORMAT(1X,'LA NOTA DEL ALUMNO ES ',F4.1' (',A3,')')
+     
