@@ -1,0 +1,9 @@
+En el ejercicio 7.3.3. deberá:
+# Compilar desde la terminal
+gfortran -o second_order ejemplo_7_2.f90
+# Ejecutar
+./second_order <<eof
+1  # A
+7  # B
+12 # 12
+eof

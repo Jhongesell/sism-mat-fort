@@ -1,0 +1,34 @@
+PROGRAM EJEMPLO_7_3
+  ! PROGRAMA QUE CALCULA LAS SOLUCIONES DE UNA EC DE SEGUNDO GRADO
+  ! y = A*x**2 + B*x + C
+  IMPLICIT NONE
+  ! Definición de variables
+  REAL :: A = 0.0
+  REAL :: B = 0.0
+  REAL :: C = 0.0
+  REAL, DIMENSION(2) :: SOL
+  REAL :: TEMP
+  INTEGER :: I
+  !
+  ! NAMELIST DEFINITIONS
+  NAMELIST/INP0/ A, B, C
+  ! NAMELIST FILE
+  OPEN(UNIT=10,FILE='sec_order.inp',STATUS='OLD')
+  ! Lectura de coeficientes
+  READ(10,INP0)
+  !
+  ! CALCULOS
+  TEMP = SQRT(B*B-4.0*A*C)
+  !
+  SOL(1) = (-B+TEMP)/(2.0*A)
+  SOL(2) = (-B-TEMP)/(2.0*A)
+  !
+  !
+  ! IMPRESION DE LAS SOLUCIONES
+  DO I=1,2
+     PRINT 200, I, SOL(I)
+200  FORMAT(1X,'SOLUCION',I2,' = ',F18.6)
+  END DO
+  !
+END PROGRAM EJEMPLO_7_3
+
