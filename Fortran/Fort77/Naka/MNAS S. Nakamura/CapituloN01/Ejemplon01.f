@@ -1,0 +1,2 @@
+real x
+integer i
